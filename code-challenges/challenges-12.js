@@ -27,9 +27,9 @@ const vowelsFiltration = (arr) => {
 
 
 const skillComparison = (arr1, arr2) => {
-    let newArr1 = arr1.filter(i => !arr2.includes(i) );
-    let newArr2 = arr2.filter(i => !arr1.includes(i) );
-    return newArr1.concat(newArr2);
+    let job = arr1.filter(i => !arr2.includes(i) );
+    let job1= arr2.filter(i => !arr1.includes(i) );
+    return job.concat(job1);
 }
 
 
