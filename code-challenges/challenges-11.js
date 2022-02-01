@@ -7,9 +7,11 @@ for (const i of arr) {
 }
 
 function fullName(arr) {
-  let  output =  arr.map(arr => `${students.firstName} ${students.lastName}`);
-    return output;
-}
+    let userFullnames = arr.map(function(e){
+        return (`${e.firstName} ${e.lastName}`) ;
+    });
+    return userFullnames;
+    }
 
 // 3) ---------------------
 // 
@@ -70,16 +72,15 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-
-      var total =0
-    for ( let i = 0; i < students.length; i++ ) {
-        total = students.gradList[i]+students.gradList[i+1];
-
-      }
-      var avg = total / gradList.length;
-
-      arr.push(avg);
-    
+    let std = arr.map(function(e)
+       {console.log(e);
+         arr.forEach(std.gradelist);
+          sum= sum+ std.gradelist[e];
+          let avg = sum /(std.length-1);
+          students[ {"avg": avg}];
+       })
+        return std1;
+}
 
 
 // 4) ---------------------
@@ -147,14 +148,19 @@ function gradesAvg(arr) {
 // 	}
 //]
 // -------------
-
 function studentsResult(arr) {
-    let result ;
-    if (avg >50)
-    {
-        result='passed';
-    }
-    else 
-    {result = 'failed'}}
+         
+                let x = arr[avg];
+                if (x == 'avg') {
+                    arr[x] >= 50;
+                    arr[x] = pass;
+                }
 
-module.exports = { square, fullName, gradesAvg, studentsResult };}
+                else 
+                    arr[x] = failed;
+
+           console.log(arr);
+       
+    }
+
+module.exports = { square, fullName, gradesAvg, studentsResult };
