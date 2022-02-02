@@ -38,17 +38,11 @@
 // ------------------------
 
 const objectCounter = (obj) => {
-    //voters.reduce((this.voter_name, this.votes_to) => voter_name+votes_to, 0)
-    // write your code here
-    let countedNames = voters.reduce(function (allNames, voters) {
-        if (voters in allNames) {
-          allNames[voters]++
-        }
-        else {
-          allNames[voters] = 1
-        }
-        return allNames
-
+     let x =obj.reduce(function (e){
+        e++;
+        return e; 
+    },0);
+    return x ;
 }
 
 // 2) ---------------------
@@ -65,7 +59,11 @@ const objectCounter = (obj) => {
 // ------------------------
 
 const stringReverse = (str) => {
-    return str.split("").reduce((rev, char)=> char + rev, '');
+      let x=str.split(' '); 
+
+        let res=x.reduce((rev, char) => char +" "+ rev, '');
+
+    return res.substring(0,res.length-1) ;
 
 }
 
@@ -108,7 +106,16 @@ const stringReverse = (str) => {
 // ------------------------
 
 const statistics = (obj) => {
-    // write your code here
+    let count = obj.reduce(function (allNames, name) {
+        if (name.votes_To in allNames) {
+          allNames[name.votes_To]++
+        }
+        else {
+          allNames[name.votes_To] = 1
+        }
+        return allNames
+      }, {})
+      return count ;
 }
 
 
