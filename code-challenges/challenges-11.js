@@ -2,14 +2,17 @@
 
 
 function square(arr) {
-for (const i of arr) {
-    Math.pow(arr[i],2);}
+   return arr.map(function(x){
+       return Math.pow(x,2);
+   });
 }
 
 function fullName(arr) {
-  let  output =  arr.map(arr => `${students.firstName} ${students.lastName}`);
-    return output;
-}
+    let userFullnames = arr.map(function(e){
+        return (`${e.firstName} ${e.lastName}`) ;
+    });
+    return userFullnames;
+    }
 
 // 3) ---------------------
 // 
@@ -70,16 +73,18 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-
-      var total =0
-    for ( let i = 0; i < students.length; i++ ) {
-        total = students.gradList[i]+students.gradList[i+1];
-
-      }
-      var avg = total / gradList.length;
-
-      arr.push(avg);
+       arr["avg"]=0; 
     
+    let x=arr.map(item=>{
+        let sum =0; 
+        let x=item.gradsList.map(mark=>{
+            sum+=mark; 
+            return sum ; 
+        })
+        item.avg=(sum/item.gradsList.length); 
+        return item ; 
+    })
+    return x;  
 
 
 // 4) ---------------------
@@ -147,14 +152,22 @@ function gradesAvg(arr) {
 // 	}
 //]
 // -------------
-
 function studentsResult(arr) {
-    let result ;
-    if (avg >50)
-    {
-        result='passed';
-    }
-    else 
-    {result = 'failed'}}
+         
+            
+    arr["result"]=""; 
 
-module.exports = { square, fullName, gradesAvg, studentsResult };}
+    let x=arr.map(item=>{
+        
+        if(item.avg>=50)
+        item.result='Passed'; 
+        else
+        item.result='Failed'; 
+        return item ;
+        
+    })
+    return x ;
+       
+    }
+
+module.exports = { square, fullName, gradesAvg, studentsResult };
