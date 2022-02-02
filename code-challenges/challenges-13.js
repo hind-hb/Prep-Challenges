@@ -38,11 +38,12 @@
 // ------------------------
 
 const objectCounter = (obj) => {
-     let x =obj.reduce(function (e){
+    let x =obj.reduce(function (e){
         e++;
         return e; 
     },0);
-    return x ;
+    return x ; 
+
 }
 
 // 2) ---------------------
@@ -59,11 +60,11 @@ const objectCounter = (obj) => {
 // ------------------------
 
 const stringReverse = (str) => {
-      let x=str.split(' '); 
+    let w=str.split(' '); 
 
-        let res=x.reduce((rev, char) => char +" "+ rev, '');
+        let a=w.reduce((rev, char) => char +" "+ rev, '');
 
-    return res.substring(0,res.length-1) ;
+    return a.substring(0,a.length-1) ; 
 
 }
 
@@ -106,7 +107,8 @@ const stringReverse = (str) => {
 // ------------------------
 
 const statistics = (obj) => {
-    let count = obj.reduce(function (allNames, name) {
+    
+    let countedNames = obj.reduce(function (allNames, name) {
         if (name.votes_To in allNames) {
           allNames[name.votes_To]++
         }
@@ -115,10 +117,9 @@ const statistics = (obj) => {
         }
         return allNames
       }, {})
-      return count ;
+      return countedNames ;
 }
 
 
 
 module.exports = { objectCounter, stringReverse, statistics };
-
