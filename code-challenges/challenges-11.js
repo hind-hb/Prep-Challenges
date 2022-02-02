@@ -2,8 +2,12 @@
 
 
 function square(arr) {
-for (const i of arr) {
-    Math.pow(arr[i],2);}
+   
+    let x= arr.map(item=>{
+        item=(item*item); 
+        return item ; 
+    })
+    return x ;
 }
 
 function fullName(arr) {
@@ -72,15 +76,18 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-    let std = arr.map(function(e)
-       {console.log(e);
-         arr.forEach(std.gradelist);
-          sum= sum+ std.gradelist[e];
-          let avg = sum /(std.length-1);
-          students[ {"avg": avg}];
-       })
-        return std1;
-}
+       arr["avg"]=0; 
+    
+    let x=arr.map(item=>{
+        let sum =0; 
+        let x=item.gradsList.map(mark=>{
+            sum+=mark; 
+            return sum ; 
+        })
+        item.avg=(sum/item.gradsList.length); 
+        return item ; 
+    })
+    return x;  
 
 
 // 4) ---------------------
@@ -150,16 +157,19 @@ function gradesAvg(arr) {
 // -------------
 function studentsResult(arr) {
          
-                let x = arr[avg];
-                if (x == 'avg') {
-                    arr[x] >= 50;
-                    arr[x] = pass;
-                }
+            
+    arr["result"]=""; 
 
-                else 
-                    arr[x] = failed;
-
-           console.log(arr);
+    let x=arr.map(item=>{
+        
+        if(item.avg>=50)
+        item.result='Passed'; 
+        else
+        item.result='Failed'; 
+        return item ;
+        
+    })
+    return x ;
        
     }
 
