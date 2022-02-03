@@ -16,7 +16,7 @@
 // -------------
 
 function square(arr) {
-    //let ans=[];
+    
     let helpArr = arr.map(item=>{
         item=(item*item); 
         return item ; 
