@@ -1,18 +1,72 @@
 'use strict';
 
+// Important Note:
+// Kindly use map loop instead of for in all of your solutions
+
+// Resource:
+// Map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+// 1) ---------------------
+// 
+// Given an array of values use map to calculate the square of the values.
+//  
+// EX:
+// [ 2, 8, 3, 5 ] ==> [ 4, 64, 9, 25 ]
+// 
+// -------------
 
 function square(arr) {
-   return arr.map(function(x){
-       return Math.pow(x,2);
-   });
+    
+    let helpArr = arr.map(item=>{
+        item=(item*item); 
+        return item ; 
+    })
+    return helpArr ;
 }
 
+// 2) ------------------
+//
+// Ex:
+// [
+//     {
+//         firstName: 'Adam',
+//         lastName: 'Anderson',
+//     },
+//     {
+//         firstName: 'Ben',
+//         lastName: 'Zeller',
+//     }, 
+//     {
+//         firstName: 'Peter',
+//         lastName: 'Mccord',
+//     },
+//     {
+//         firstName: 'Fred',
+//         lastName: 'Sagar',
+//     },
+//     {
+//         firstName: 'Nathan',
+//         lastName: 'Weiss',
+//     }
+// ]
+//
+//
+// Output ==>['Adam Anderson', 'Ben Zeller', 'Peter Mccord', 'Fred Sagar', 'Nathan Weiss']
+// 
+//
+// Given an array of objects of student's first and last name, use the map to return an array off student's full names.
+//
+// note: the full names should be combined between student's first and last names.
+//
+
 function fullName(arr) {
-    let userFullnames = arr.map(function(e){
-        return (`${e.firstName} ${e.lastName}`) ;
-    });
-    return userFullnames;
-    }
+    
+    let helpArr=arr.map(item=>{
+        item =(`${item.firstName} ${item.lastName}`); 
+        return item; 
+    })
+    return helpArr ; 
+}
 
 // 3) ---------------------
 // 
@@ -73,18 +127,19 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-       arr["avg"]=0; 
+    arr["avg"]=0; 
     
-    let x=arr.map(item=>{
+    let helpingArr=arr.map(item=>{
         let sum =0; 
-        let x=item.gradsList.map(mark=>{
+        let helpArr=item.gradsList.map(mark=>{
             sum+=mark; 
             return sum ; 
         })
         item.avg=(sum/item.gradsList.length); 
         return item ; 
     })
-    return x;  
+    return helpingArr;  // returns undefined data ?!
+}
 
 
 // 4) ---------------------
@@ -152,12 +207,12 @@ function gradesAvg(arr) {
 // 	}
 //]
 // -------------
+
 function studentsResult(arr) {
-         
-            
+    
     arr["result"]=""; 
 
-    let x=arr.map(item=>{
+    let helpingArr=arr.map(item=>{
         
         if(item.avg>=50)
         item.result='Passed'; 
@@ -166,8 +221,6 @@ function studentsResult(arr) {
         return item ;
         
     })
-    return x ;
-       
-    }
-
+    return helpingArr ;
+}
 module.exports = { square, fullName, gradesAvg, studentsResult };
