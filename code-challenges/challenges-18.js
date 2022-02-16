@@ -15,7 +15,11 @@
 //
 
 const wordLength = (str) => {
-    // write your code here
+    let a = str.split(" ");
+    let b = a[parseInt(a.length / 2)].length;
+  
+
+  return b;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -40,7 +44,8 @@ const wordLength = (str) => {
 // Output: false
 
 const wordLetters = (str1, str2) => {
-    // write your code here
+    return str1.localeCompare(str2);
+    
 }
 // -------------------------------------------------------------------------------------------------------
 
